@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatMenuModule, MatListModule, MatDividerModule, MatGridListModule, MatExpansionModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatMenuModule, MatListModule, MatDividerModule, MatGridListModule, MatExpansionModule, MatCardModule, MatTabsModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatAutocompleteModule, MatCheckboxModule, MatRadioModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
 import { MatButtonToggleModule } from '@angular/material';
@@ -18,7 +18,16 @@ const material =[
   MatListModule,
   MatDividerModule,
   MatGridListModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatCardModule,
+  MatTabsModule,
+  MatStepperModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatAutocompleteModule,
+  MatCheckboxModule,
+  MatRadioModule
 ]
 
 @NgModule({
@@ -27,20 +36,4 @@ const material =[
 })
 export class MaterialModule { }
 
-// mat-typography
-// mat-caption
-// mat-body-1~2
-// mat-subheading-1~2
-// mat-title
-// mat-headline
-// mat-display1~4
 
-// mat-button
-// mat-raised-button
-// mat-flat-button
-// mat-stroked-button
-// mat-icon-button
-// mat-fab
-// mat-mini-fab
-// color=primary
-// 6 variants and 3 colors
