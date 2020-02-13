@@ -1,5 +1,157 @@
-<button color='primary' mat-raised-button>Hello World</button>
-<button mat-raised-button>
-  <mat-icon>library_books</mat-icon>
 
+
+
+
+
+
+
+
+<hr>
+<hr>
+<hr>
+
+
+
+<mat-grid-list cols='4' rowHeight="50px" gutterSize="10px">
+  <!-- ou rowHeight="2:1"
+  style="height: 200px" limita o tamanho maximo -->
+  <mat-grid-tile rowspan=2>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile colspan=2>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+  <mat-grid-tile>TEST</mat-grid-tile>
+</mat-grid-list>
+
+
+
+
+
+
+
+
+<hr>
+<hr>
+<hr>
+
+
+
+<mat-list>
+  <mat-list-item>
+    <mat-icon matListIcon>home</mat-icon>
+    <h3 matLine>Heading</h3>
+    <p matLine>Line</p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <mat-icon matListIcon>folder</mat-icon>
+    <h3 matLine>Heading</h3>
+    <p matLine>Line</p>
+  </mat-list-item>
+</mat-list>
+
+
+
+
+
+
+
+
+
+
+<hr>
+<hr>
+<hr>
+
+
+<mat-menu #appMenu="matMenu" xPosition="after" yPosition="above">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">frontend</button>
+  <button mat-menu-item>backend</button>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerFor]="appMenu">menu</button>
+
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>angular</button>
+  <button mat-menu-item>react</button>
+  <button mat-menu-item>vue</button>
+</mat-menu>
+
+<mat-menu #lazyMenu="matMenu">
+  <ng-template matMenuContent let-name="name" let-hobby="hobby">
+    <button mat-menu-item>settings</button>
+    <button mat-menu-item>hobby is {{ hobby }}</button>
+    <button mat-menu-item>log out {{ name }}</button>
+  </ng-template>
+</mat-menu>
+
+<!-- on click call another menu sendind data -->
+<button mat-raised-button [matMenuTriggerData]="{name: 'Vishwas', hobby: 'football'}"
+  [matMenuTriggerFor]="lazyMenu">Vishwas</button>
+<button mat-raised-button [matMenuTriggerData]="{name: 'Codevolution', hobby: 'programming'}"
+  [matMenuTriggerFor]="lazyMenu">Codevolution</button>
+
+<hr>
+<hr>
+<hr>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav (opened)="log('opened')" (closed)="log('closed')" mode="side" [(opened)]='opened'>Sidenav
+  </mat-sidenav>
+  <!-- modes: push, over, side -->
+  <mat-sidenav-content>{{opened}}
+    <button (click)="opened = !opened">toggle opened</button>
+    <button (click)="sidenav.open()">open</button>
+    <button (click)="sidenav.close()">close</button>
+    <button (click)="sidenav.toggle()">toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<hr>
+<hr>
+<div>
+  <span class="myspan" matBadge="4">Notifications</span>
+  <!-- matBadgePosition
+  matBadgeSize
+  matBadgeColor
+  matBadgeOverlap
+  [matBadgeHidden]
+  da para usar badge nos icons -->
+</div>
+<button color='primary' mat-raised-button>Hello World</button>
+<button color='error' mat-raised-button>
+  <mat-icon>assessment</mat-icon><span>test</span>
 </button>
+<mat-button-toggle #toggleBtn>Toggle</mat-button-toggle>
+{{toggleBtn.checked}}
+<mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+  <mat-button-toggle value='angular'>angular</mat-button-toggle>
+  <mat-button-toggle value='react'>react</mat-button-toggle>
+  <mat-button-toggle value='vue'>vue</mat-button-toggle>
+</mat-button-toggle-group>
+{{toggleGroup.value}}
+<hr>
+<!-- <mat-progress-spinner value="70"></mat-progress-spinner> -->
+<!-- ver progress bar -->
+<button mat-raised-button color='primary' (click)="loadData()">load data</button>
+<mat-spinner *ngIf="showSpinner"></mat-spinner>
+<hr>
+<mat-toolbar color='accent' class='navbar'>
+  <div>codevolution</div>
+  <div>
+    <span>Home</span>
+    <span>About</span>
+    <span>Services</span>
+  </div>
+</mat-toolbar>
+
+<hr>
