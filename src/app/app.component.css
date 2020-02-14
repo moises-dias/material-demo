@@ -1,3 +1,20 @@
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid maroon;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.container {
+    height: 400px;
+}
+
+table {
+    width: 100%;
+  }
+
 .navbar {
     justify-content: space-between;
 }
