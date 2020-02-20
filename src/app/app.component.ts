@@ -68,6 +68,7 @@ export class AppComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    
   }
 
   logData(row) {
@@ -100,6 +101,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    
 
     this.filteredOptions = this.myControl.valueChanges
       .pipe(startWith(''),

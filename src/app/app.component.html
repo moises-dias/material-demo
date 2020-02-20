@@ -47,7 +47,7 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-row (click)="logData(row); openDialog()" *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
@@ -180,7 +180,7 @@
   <!-- color="accent, warn, ..." -->
   <mat-label>name</mat-label>
   <input matInput required>
-  <mat-hint>min 5 characters</mat-hint>
+  <mat-hint [ngStyle]="{color: red}">min 55 characters</mat-hint>
   <!-- align='end' -->
 </mat-form-field>
 
@@ -248,11 +248,14 @@
 <!-- ------------------------------------ -->
 <!-- ------------------------------------ -->
 <h1 class="mat-display1">Expansion panel</h1>
-
+<mat-checkbox #checkedx>
+  <!-- cor default é accent -->
+  subscribe {{ checkedx.checked }}
+</mat-checkbox>
 <mat-accordion>
   <!-- acordion só abre um painel de cada vez, se for tentar abrir o segundo fecha o primeiro -->
   <!-- multi=true deixa abrir mais de um  -->
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="checkedx.checked">
     <mat-expansion-panel-header>
       <mat-panel-title>
         angular fundamental
